@@ -7,9 +7,9 @@ const Productlist = ({c}) => {
 
   const router = useRouter();
   const Dlt = async(id,item)=>{
-    // axios.post(`http://localhost:9090/deleted`,item)
-    // axios.delete(`http://localhost:9090/products/${id}`)
-      await fetch(`http://localhost:9090/products/${id}`, {
+    // axios.post(`https://alert-seal-bandanna.cyclic.app/deleted`,item)
+    // axios.delete(`https://alert-seal-bandanna.cyclic.app/products/${id}`)
+      await fetch(`https://alert-seal-bandanna.cyclic.app/products/${id}`, {
         method: 'DELETE',
       })
         .then(response => {
@@ -64,7 +64,7 @@ const Productlist = ({c}) => {
 export default Productlist
 
 export async function getStaticProps(context) {
-  const response = await axios.get(`http://localhost:9090/products`);
+  const response = await axios.get(`https://alert-seal-bandanna.cyclic.app/products`);
   const data = response.data;
   let c = data.slice(0,13)
   return {

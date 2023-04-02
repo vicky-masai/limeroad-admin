@@ -23,7 +23,7 @@ const Addproduct = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    fetch(`http://localhost:9090/products/`, {
+    fetch(`https://alert-seal-bandanna.cyclic.app/products/`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
