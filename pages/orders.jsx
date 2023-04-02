@@ -3,8 +3,15 @@ import styles from '@/styles/Home.module.css'
 import Side from '@/components/Side'
 import axios from 'axios';
 import { useRouter } from 'next/router';
-const Orders = ({data}) => {
+const Orders = () => {
 
+  const data = [{
+    "name":"Vicky Kumar",
+    "email":"vicky@gmail.com",
+    "phone":"8298262107",
+    "address":"Hajipur",
+    "product_name":"Classic White T-Shirt"
+  }]
   // const router = useRouter();
   // const Dlt = (id)=>{
   //   axios.delete(`https://shopkaro-backend.onrender.com/users/${id}`)
@@ -16,8 +23,6 @@ const Orders = ({data}) => {
 </div>
 <table className={styles.list}>
     <thead>
-
-      
       <tr>
         <th style={{paddingLeft:"20px"}}>User Name</th>
         <th>Email</th>
@@ -32,11 +37,22 @@ const Orders = ({data}) => {
       let id = item.id;
       return (
           <tr key={index}>
-            <td style={{paddingLeft:"20px"}}>{item.name}</td>
-            <td>{item.email}</td>
-            <td>{item.phone}</td>
-            <td>{item.address}</td>
-            <td>{item.product_name}</td>
+            <td style={{paddingLeft:"20px"}}>
+              {item.name}
+            </td>
+            <td>
+              {item.email}
+            </td>
+            <td>
+              {item.phone}
+              </td>
+            <td>
+              {item.address}
+              </td>
+            <td>
+              {item.product_name}
+              
+              </td>
           </tr>
       )
     })}
@@ -47,12 +63,12 @@ const Orders = ({data}) => {
 
 export default Orders
 
-export async function getStaticProps(context) {
-  const response = await axios.get(`https://shopkaro-backend.onrender.com/orders`);
-  const c = response.data;
-  let data = c.slice(0,13)
-  return {
-    props: {data}, 
-  }
+// export async function getStaticProps(context) {
+//   const response = await axios.get(`https://shopkaro-backend.onrender.com/orders`);
+//   const c = response.data;
+//   let data = c.slice(0,13)
+//   return {
+//     props: {data}, 
+//   }
 
-}
+// }
