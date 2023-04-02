@@ -39,7 +39,7 @@ router.push(`${url}`)
 
 export default Dashboard
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     // orders api 
     // let data = await axios.get(`https://alert-seal-bandanna.cyclic.app/orders`)
     // let orders = await data.data;

@@ -63,7 +63,7 @@ const Productlist = ({c}) => {
 
 export default Productlist
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const response = await axios.get(`https://alert-seal-bandanna.cyclic.app/products`);
   const data = response.data;
   let c = data.slice(0,13)

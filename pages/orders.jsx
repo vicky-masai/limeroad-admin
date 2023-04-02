@@ -51,7 +51,6 @@ const Orders = () => {
               </td>
             <td>
               {item.product_name}
-              
               </td>
           </tr>
       )
